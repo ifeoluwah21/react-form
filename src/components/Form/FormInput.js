@@ -6,7 +6,7 @@ function FormInput(props) {
     return (
         <div className={styles["form-control"]}>
             <label htmlFor={props.label}>{props.title}</label>
-            <input type={props.type} name={props.label} id={props.label} />
+            <input value={props.value} onChange={props.onChange} type={props.type} name={props.label} id={props.label} />
         </div>
     )
 }

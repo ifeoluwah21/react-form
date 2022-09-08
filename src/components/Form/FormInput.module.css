@@ -17,6 +17,8 @@
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .form-control input:focus {

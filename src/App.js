@@ -5,19 +5,20 @@ import FormDetails from './components/Details/FormDetails';
 
 import styles from './App.module.css';
 
-const FORM_DATA = [
-  { username: "Ifeoluwa", age: 20 },
-  { username: "Motunrayo", age: 20 },
-  { username: "Doyin", age: 19 },
-  { username: "Favour", age: 30 }
-]
+const FORM_DATA = [];
 
 function App() {
   const [formData, setFormData] = useState(FORM_DATA)
+  function addUserHandler(user) {
+    setFormData(prevState => [user, ...prevState]);
+  }
+  function deleteUserHandler(id) {
+    setFormData(prevState => prevState.filter(user => user.id !== id));
+  }
   return (
     <div className={styles.app}>
-      <Form></Form>
-      <FormDetails users={formData}></FormDetails>
+      <Form onAddUser={addUserHandler}></Form>
+      <FormDetails onDeleteUser={deleteUserHandler} users={formData}></FormDetails>
     </div>
   );
 }

@@ -3,8 +3,11 @@ import React from 'react';
 import styles from "./FormDetail.module.css";
 
 function FormDetail(props) {
+    const clickHandler = event => {
+        props.onSelectUser(props.userDetails.id)
+    }
     return (
-        <p className={styles.detail}>{`${props.username} (${props.age} years old)`}</p>
+        <li onClick={clickHandler} className={styles.detail}>{`${props.userDetails.username} (${props.userDetails.age} years old)`}</li>
     )
 }
 

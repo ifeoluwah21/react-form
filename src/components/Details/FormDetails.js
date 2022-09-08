@@ -5,13 +5,19 @@ import FormDetail from './FormDetail';
 import styles from "./FormDetails.module.css";
 
 function FormDetails(props) {
+    function selectUserHandler(id) {
+        console.log(id);
+        props.onDeleteUser(id);
+    }
     return (
         <div className={styles.wrapper}>
             <Card>
-                {props.users.map(user => <FormDetail username={user.username} age={user.age} />)}
+                <ul>
+                    {props.users.map(user => <FormDetail onSelectUser={selectUserHandler} userDetails={user} key={user.id} />)}
+                </ul>
             </Card>
         </div>
     )
 }
 
-export default FormDetails
+export default FormDetails;
