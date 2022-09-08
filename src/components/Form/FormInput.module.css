@@ -1,0 +1,24 @@
+.form-control {
+  padding: 0.5rem 0;
+}
+
+.form-control label {
+  display: block;
+  padding: 0.5rem 0;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: sans-serif;
+}
+.form-control input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-control input:focus {
+  outline: none;
+}
